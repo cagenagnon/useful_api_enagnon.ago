@@ -6,18 +6,19 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ModuleController;
 use App\Http\Controllers\UserController;
+use App\Http\Middleware\CheckModuleActive;
 
 Route::middleware(['auth:sanctum'])->get('/users', function (Request $request) {
     return $request->user();
 });
 
+
 Route::get('/users', [UserController::class, 'create']);
-Route::get('/modules', [ModuleController::class, 'store']);
 
 
-Route::get('/modules/{module}',[ModuleController::class])
+Route::get('/user_module/{user_id}',[CheckModuleActive::class])
     ->middleware(['auth', 'active'])
-    ->name('module');
+    ->name('user_module');
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
     ->middleware('guest')

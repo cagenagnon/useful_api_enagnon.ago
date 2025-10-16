@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Module;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use GuzzleHttp\Promise\Create;
+use Illuminate\Contracts\View\View;
+use App\Http\Controllers\Controller;
 
 class ModuleController extends Controller
 {
@@ -36,5 +37,17 @@ class ModuleController extends Controller
 
         return response()->json($module);
     }
+
+       public function show(Module $module): View
+
+    {
+        return view('modules', [
+
+            'module' => Module::findOrFail($module)
+
+        ]);
+
+    }
+
 
 }
