@@ -11,13 +11,8 @@ Route::middleware(['auth:sanctum'])->get('/users', function (Request $request) {
     return $request->user();
 });
 
+
 Route::get('/users', [UserController::class, 'create']);
-Route::get('/modules', [ModuleController::class, 'store']);
-
-
-Route::get('/modules/{module}',[ModuleController::class])
-    ->middleware(['auth', 'active'])
-    ->name('module');
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
     ->middleware('guest')
