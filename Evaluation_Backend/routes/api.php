@@ -17,7 +17,7 @@ Route::get('/modules', [ModuleController::class, 'store']);
 
 Route::get('/modules/{module}',[ModuleController::class])
     ->middleware(['auth', 'active'])
-    ->name('module.active');
+    ->name('module');
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
     ->middleware('guest')
