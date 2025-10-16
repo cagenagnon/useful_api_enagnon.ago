@@ -2,12 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\NewPasswordController;
-use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\Auth\EmailVerificationNotificationController;
+use App\Http\Controllers\ModuleController;
 use App\Http\Controllers\UserController;
 
 Route::middleware(['auth:sanctum'])->get('/users', function (Request $request) {
@@ -15,6 +12,12 @@ Route::middleware(['auth:sanctum'])->get('/users', function (Request $request) {
 });
 
 Route::get('/users', [UserController::class, 'create']);
+Route::get('/modules', [ModuleController::class, 'store']);
+
+
+Route::get('/modules/{module}',[ModuleController::class])
+    ->middleware(['auth', 'active'])
+    ->name('module');
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
     ->middleware('guest')
@@ -27,3 +30,4 @@ Route::post('/login', [AuthenticatedSessionController::class, 'store'])
 Route::post('/logout', [AuthenticatedSessionController::class, 'logout'])
     ->middleware('auth')
     ->name('logout');
+
