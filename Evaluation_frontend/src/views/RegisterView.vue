@@ -10,25 +10,25 @@
 
       <div>
         <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-        <input type="text" id="name" name="name" required
+        <input type="text" id="name" name="name" required placeholder="name"
           class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
       </div>
 
       <div>
         <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email </label>
-        <input type="email" id="email" name="email" required
+        <input type="email" id="email" name="email" required placeholder="email"
           class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
       </div>
 
 
       <div>
         <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
-        <input type="password" id="password" name="password" required
+        <input type="password" id="password" name="password" required placeholder="..................."
           class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
       </div>
        <div>
         <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Coonfirm Password</label>
-        <input type="password" id="password" name="password_confirmation" required
+        <input type="password" id="password" name="password_confirmation" required placeholder="..................."
           class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
       </div>
 

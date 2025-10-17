@@ -10,7 +10,7 @@
 
       <div>
         <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email </label>
-        <input  v-model="email" type="email" id="email" name="email" required
+        <input  v-model="email" type="email" id="email" name="email" required placeholder="email"
           class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" />
       </div>
 
