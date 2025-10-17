@@ -10,3 +10,5 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 });
 
 Route::post('/shorten', [ShortUrlController::class, 'shorten']);
+Route::get('/links', [ShortUrlController::class, 'index']);
+Route::get('/s/{code}', [ShortUrlController::class, 'index']);
