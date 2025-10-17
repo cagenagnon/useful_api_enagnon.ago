@@ -23,8 +23,7 @@ class AuthenticatedSessionController extends Controller
         $token = $request->user()->createToken('Gloglo');
         $user = $request->user();
 
-        return response()->json(["success"=> true, "Gloglo" => $token->plainTextToken, 'user' => $user,]);
-
+        return response()->json(["success"=> true, "Gloglo" => $token->plainTextToken, 'user' => $user],200);
     }
 
     /**
